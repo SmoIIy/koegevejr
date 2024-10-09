@@ -44,7 +44,7 @@ function Weathers() {
         );
     }
 
-    // console.log(data.forecast.forecastday);
+    console.log(data.forecast.forecastday);
     return (
         <main className="container summer">
             <div className="left">
@@ -54,13 +54,15 @@ function Weathers() {
                 </div>
                 <div className="left-wrapper mid grader">
                     <p className="">{Math.trunc(data.current.temp_c)}° </p>
-                    <img src="/src/assets/rainyday.png" alt="" />
+                    <img src={data.current.condition.icon} alt="" />
                 </div>
                 <div className="left-wrapper bottom">
                     {data.forecast.forecastday.map((forecast, i) => (
                         <ForecastItem
+                            key={i}
                             day={days[i]}
                             weather={Math.trunc(forecast.day.avgtemp_c)}
+                            icon={forecast.day.condition.icon}
                         />
                     ))}
                 </div>

@@ -1,3 +1,5 @@
+// conditions : https://www.weatherapi.com/docs/weather_conditions.json
+
 export function getDayAndDate() {
     const today = new Date();
     const daysOfWeek = [
@@ -61,7 +63,7 @@ export function getDaysAndDates() {
         today.setDate(today.getDate() + 1);
     }
 
-    console.log(daysAndDates);
+    // console.log(daysAndDates);
     return daysAndDates;
 }
 
