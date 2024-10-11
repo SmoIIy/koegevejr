@@ -1,3 +1,5 @@
+import translate from "translate";
+translate.engine = "google";
 // conditions : https://www.weatherapi.com/docs/weather_conditions.json
 
 export function getDayAndDate() {
@@ -74,7 +76,11 @@ const fetchDataCurrent = async () => {
     const response = await fetch(endpointCurrent);
     // console.log(await response.text());
     const data = await response.json();
-
+    data.current.condition.text = await translate(
+        data.current.condition.text,
+        "da"
+    );
+    console.log(data.current.condition.text);
     return data;
 };
 export default fetchDataCurrent;

@@ -1,6 +1,7 @@
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import ForecastItem from "./components/ForecastItem";
+
 import fetchDataCurrent, {
     getDayAndDate,
     getMonth,
@@ -26,6 +27,7 @@ function Weathers() {
         ["apiData"],
         fetchDataCurrent
     );
+
     if (isLoading) {
         return (
             <div className="container">
@@ -45,6 +47,7 @@ function Weathers() {
     }
 
     console.log(data.forecast.forecastday);
+
     return (
         <main className="container summer">
             <div className="left">
@@ -53,8 +56,16 @@ function Weathers() {
                     <p className="dato måned">{getMonth()}</p>
                 </div>
                 <div className="left-wrapper mid grader">
-                    <p className="">{Math.trunc(data.current.temp_c)}° </p>
-                    <img src={data.current.condition.icon} alt="" />
+                    <div>
+                        <p className="">{Math.trunc(data.current.temp_c)}°</p>
+                        <p className="feels-like">
+                            <i className="bold">
+                                {data.current.condition.text}
+                            </i>{" "}
+                            Føles som: {Math.trunc(data.current.feelslike_c)}°
+                        </p>
+                    </div>
+                    <img src="/src/assets/icons/day/176.svg" alt="" />
                 </div>
                 <div className="left-wrapper bottom">
                     {data.forecast.forecastday.map((forecast, i) => (
