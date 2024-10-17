@@ -90,6 +90,13 @@ h6 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 body {
     margin: 0;
@@ -234,4 +241,12 @@ button:focus-visible {
     background-color: transparent;
     top: -5px;
     right: 0;
+}
+
+:popover-open {
+    position: relative;
+    border: 0;
+    width: 200px;
+    inset: unset;
+    margin: 0;
 }

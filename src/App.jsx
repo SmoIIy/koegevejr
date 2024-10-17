@@ -50,7 +50,10 @@ function Weathers() {
 
     return (
         <main className="container summer">
-            <button className="menu">Menu</button>
+            <button popovertarget="menu" className="menu">
+                Menu
+            </button>
+
             <div className="left">
                 <div className="left-wrapper top">
                     <p className="dato">{getDayAndDate()}</p>
