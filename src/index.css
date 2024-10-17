@@ -143,6 +143,7 @@ button:focus-visible {
 }
 
 .container {
+    position: relative;
     width: 1130px;
     height: 750px;
     overflow: hidden;
@@ -226,4 +227,11 @@ button:focus-visible {
     img {
         height: 36px;
     }
+}
+
+.menu {
+    position: absolute;
+    background-color: transparent;
+    top: -5px;
+    right: 0;
 }

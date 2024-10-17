@@ -50,6 +50,7 @@ function Weathers() {
 
     return (
         <main className="container summer">
+            <button className="menu">Menu</button>
             <div className="left">
                 <div className="left-wrapper top">
                     <p className="dato">{getDayAndDate()}</p>
@@ -57,11 +58,11 @@ function Weathers() {
                 </div>
                 <div className="left-wrapper mid grader">
                     <div>
+                        <p className="feels-like">
+                            {data.current.condition.text}
+                        </p>{" "}
                         <p className="">{Math.trunc(data.current.temp_c)}°</p>
                         <p className="feels-like">
-                            <i className="bold">
-                                {data.current.condition.text}
-                            </i>{" "}
                             Føles som: {Math.trunc(data.current.feelslike_c)}°
                         </p>
                     </div>
