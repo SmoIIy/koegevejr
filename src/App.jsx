@@ -1,6 +1,7 @@
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import ForecastItem from "./components/ForecastItem";
+import Menu from "./components/Menu";
 
 import fetchDataCurrent, {
     getDayAndDate,
@@ -50,9 +51,7 @@ function Weathers() {
 
     return (
         <main className="container summer">
-            <button popovertarget="menu" className="menu">
-                Menu
-            </button>
+            <Menu className="menu" />
 
             <div className="left">
                 <div className="left-wrapper top">
