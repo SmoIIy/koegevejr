@@ -1,20 +1,10 @@
-import React from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import {
-    HamburgerMenuIcon,
-    DotFilledIcon,
-    CheckIcon,
-    ChevronRightIcon,
-} from "@radix-ui/react-icons";
+import { ChevronRightIcon } from "@radix-ui/react-icons";
 import "../index.css";
 
 //https://www.radix-ui.com/primitives/docs/components/dropdown-menu
 
 const DropdownMenuDemo = () => {
-    const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
-    const [urlsChecked, setUrlsChecked] = React.useState(false);
-    const [person, setPerson] = React.useState("pedro");
-
     return (
         <DropdownMenu.Root className="menu">
             <DropdownMenu.Trigger asChild>
