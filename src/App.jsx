@@ -50,7 +50,7 @@ function Weathers() {
     console.log(data.forecast.forecastday);
 
     return (
-        <main className="container summer">
+        <main className="container fall">
             <Menu className="menu" />
 
             <div className="left">

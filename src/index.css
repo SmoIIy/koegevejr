@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -74,7 +75,6 @@ h6 {
     --text-color-pink: #f42069;
     --text-color-blue: #00053d;
     --text-color-green: #8b8c64;
-
     --background-gradient-pink: linear-gradient(
         153deg,
         #f42069 0%,
@@ -82,7 +82,7 @@ h6 {
     );
 
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
+
     background-color: #242424;
 
     font-synthesis: none;
@@ -97,6 +97,12 @@ a {
     text-decoration: none;
     color: inherit;
 }
+.summer {
+    --text-color: var(--text-color-pink);
+}
+.fall {
+    --text-color: var(--text-color-green);
+}
 
 body {
     margin: 0;
@@ -104,9 +110,10 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-    background-image: url("/visitkøge.webp");
+    background-image: url("/src/assets/images/seasons/fall/DSC08926-min.JPG");
     background-position: center;
     background-size: cover;
+    color: var(--text-color);
 }
 
 h1 {
@@ -126,7 +133,7 @@ button {
     transition: border-color 0.25s;
 }
 button:hover {
-    border-color: var(--text-color-pink);
+    border-color: var(--text-color);
 }
 button:focus,
 button:focus-visible {
@@ -144,9 +151,6 @@ button:focus-visible {
     button {
         background-color: #f9f9f9;
     }
-}
-.summer {
-    color: var(--text-color-pink);
 }
 
 .container {
@@ -175,6 +179,7 @@ button:focus-visible {
         justify-content: center;
     }
     .left {
+        color: var(--text-color);
         grid-column: 1 / 8;
         .bottom {
             justify-content: space-around;
@@ -218,14 +223,14 @@ button:focus-visible {
 
 .forecast-wrapper {
     font-weight: 400;
-    color: var(--text-color-pink);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 4px 16px;
     gap: 16px;
     border-radius: 8px;
-    /* border: 2px inset var(--text-color-pink); */
+    /* border: 2px inset var(--text-color); */
     box-shadow: -40px 67px 22px 0px rgba(0, 0, 0, 0),
         -26px 43px 20px 0px rgba(0, 0, 0, 0.01),
         -14px 24px 17px 0px rgba(0, 0, 0, 0.05),
@@ -237,6 +242,7 @@ button:focus-visible {
 }
 
 .menu {
+    color: var(--text-color);
     position: absolute;
     background-color: transparent;
     top: -5px;
@@ -252,9 +258,6 @@ button:focus-visible {
 }
 
 /* Menu */
-@import "@radix-ui/colors/black-alpha.css";
-@import "@radix-ui/colors/mauve.css";
-@import "@radix-ui/colors/violet.css";
 
 /* reset */
 button {
@@ -299,7 +302,7 @@ button {
 .DropdownMenuSubTrigger {
     font-size: 16px;
     line-height: 1;
-    color: var(--text-color-pink);
+    color: var(--text-color);
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -334,12 +337,12 @@ button {
     padding-left: 25px;
     font-size: 12px;
     line-height: 25px;
-    color: var(--text-color-pink);
+    color: var(--text-color);
 }
 
 .DropdownMenuSeparator {
     height: 1px;
-    background-color: var(--text-color-pink);
+    background-color: var(--text-color);
     margin: 5px;
 }
 
@@ -358,20 +361,22 @@ button {
 
 .IconButton {
     font-family: inherit;
-    border-radius: 3px;
+    border-radius: 0.3rem;
     height: 35px;
     padding-inline: 2rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid var(--text-color);
     cursor: pointer;
-    color: inherit;
+    color: var(--text-color);
     background-color: white;
     box-shadow: 0 2px 10px var(--text-color-blue);
     transition: all 130ms ease;
 }
 .IconButton:hover {
-    background-color: #f420694a;
+    background-color: var(--text-color);
+    border-color: white;
     color: white;
 }
 .IconButton:focus {
@@ -381,13 +386,13 @@ button {
 .RightSlot {
     margin-left: auto;
     padding-left: 20px;
-    color: var(--text-color-pink);
+    color: var(--text-color);
 }
 [data-highlighted] > .RightSlot {
     color: white;
 }
 [data-disabled] .RightSlot {
-    color: var(--text-color-pink);
+    color: var(--text-color);
 }
 
 @keyframes slideUpAndFade {
