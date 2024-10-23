@@ -110,7 +110,7 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-    background-image: url("/src/assets/images/seasons/fall/DSC08926-min.JPG");
+    background-image: url("/images/seasons/fall/DSC08926-min.JPG");
     background-position: center;
     background-size: cover;
     color: var(--text-color);
@@ -154,9 +154,10 @@ button:focus-visible {
 }
 
 .container {
+    margin: 0 auto;
     position: relative;
-    width: 1130px;
-    height: 750px;
+    max-width: 1130px;
+    height: clamp(750px, 80vh, 100vh);
     overflow: hidden;
     background-color: rgba(247, 251, 255, 0.9);
     border-radius: 0.6rem;
@@ -168,7 +169,7 @@ button:focus-visible {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     .left-wrapper {
-        height: 250px;
+        height: clamp(150px, 33%, 250px);
         display: flex;
         align-items: center;
         padding: 16px;
@@ -195,12 +196,13 @@ button:focus-visible {
 }
 
 .grader {
-    font-size: 170px;
+    font-size: clamp(100px, 16vw, 170px);
     font-weight: 300;
     justify-content: space-around;
     line-height: 0.9;
     img {
         height: 100%;
+        width: clamp(100px, 20vw, 218px);
     }
     .feels-like {
         font-size: 20px;
@@ -259,7 +261,6 @@ button:focus-visible {
 
 /* Menu */
 
-/* reset */
 button {
     all: unset;
 }
@@ -302,7 +303,7 @@ button {
 .DropdownMenuSubTrigger {
     font-size: 16px;
     line-height: 1;
-    color: var(--text-color);
+    color: #242424;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -315,21 +316,21 @@ button {
     outline: none;
 }
 .DropdownMenuSubTrigger[data-state="open"] {
-    background-color: var(--text-color-blue);
+    background-color: #242424;
     color: white;
 }
 .DropdownMenuItem[data-disabled],
 .DropdownMenuCheckboxItem[data-disabled],
 .DropdownMenuRadioItem[data-disabled],
 .DropdownMenuSubTrigger[data-disabled] {
-    color: var(--text-color-blue);
+    color: #242424;
     pointer-events: none;
 }
 .DropdownMenuItem[data-highlighted],
 .DropdownMenuCheckboxItem[data-highlighted],
 .DropdownMenuRadioItem[data-highlighted],
 .DropdownMenuSubTrigger[data-highlighted] {
-    background-color: var(--text-color-blue);
+    background-color: #242424;
     color: white;
 }
 
@@ -436,5 +437,49 @@ button {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .container {
+        margin-block: 1rem;
+        overflow-y: visible;
+        .right {
+            display: none;
+        }
+        .left {
+            grid-column: 1/13;
+
+            .top {
+                height: 150px;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            .left-wrapper {
+                padding: 0;
+            }
+            .bottom {
+                flex-direction: column;
+                min-height: 250px;
+            }
+            .grader {
+                img {
+                }
+            }
+        }
+    }
+    .IconButton {
+        background-color: transparent;
+        box-shadow: 0 0 0 0;
+        right: 0;
+    }
+
+    .forecast-wrapper {
+        gap: 4px;
+        flex-direction: row;
+        box-shadow: none;
+        width: min(75%, 100%);
+        justify-content: space-between;
     }
 }

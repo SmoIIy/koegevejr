@@ -68,7 +68,7 @@ function Weathers() {
                             Føles som: {Math.trunc(data.current.feelslike_c)}°
                         </p>
                     </div>
-                    <img src="/src/assets/icons/day/176.svg" alt="" />
+                    <img src="/icons/day/176.svg" alt="" />
                 </div>
                 <div className="left-wrapper bottom">
                     {data.forecast.forecastday.map((forecast, i) => (
@@ -79,10 +79,20 @@ function Weathers() {
                             icon={forecast.day.condition.icon}
                         />
                     ))}
+                    <ForecastItem
+                        day="monday"
+                        weather={22}
+                        icon={"/icons/day/176.svg"}
+                    />
+                    <ForecastItem
+                        day="monday"
+                        weather={22}
+                        icon={"/icons/day/176.svg"}
+                    />
                 </div>
             </div>
             <div className="right">
-                <img src="../rain.webp" alt="regn" />
+                <img src="/rain.webp" alt="regn" />
             </div>
         </main>
     );
