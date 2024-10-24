@@ -6,9 +6,11 @@ export default function ForecastItem({
 }) {
     return (
         <div className="forecast-wrapper" key={key}>
-            <p>{day}</p>
-            <img src={icon} alt="" />
-            <p>{weather}°</p>
+            <p className="forecast-day">{day}</p>
+            <div className="forecast-weather-wrapper">
+                <img src={icon} alt="" />
+                <p>{weather}°</p>
+            </div>
         </div>
     );
 }

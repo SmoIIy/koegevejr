@@ -68,7 +68,11 @@ function Weathers() {
                             Føles som: {Math.trunc(data.current.feelslike_c)}°
                         </p>
                     </div>
-                    <img src="/icons/day/176.svg" alt="" />
+                    <img
+                        className="backlight"
+                        src="/icons/day/176.svg"
+                        alt=""
+                    />
                 </div>
                 <div className="left-wrapper bottom">
                     {data.forecast.forecastday.map((forecast, i) => (

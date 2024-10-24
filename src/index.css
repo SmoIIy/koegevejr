@@ -204,12 +204,30 @@ button:focus-visible {
         height: 100%;
         width: clamp(100px, 20vw, 218px);
     }
+
     .feels-like {
         font-size: 20px;
         font-weight: 300;
         text-align: left;
         padding-left: 2rem;
     }
+}
+.backlight {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+.backlight:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    background: inherit;
+    filter: blur(20px) blur(20px);
+    z-index: -1;
 }
 .dato {
     padding-inline: 3.5rem;
@@ -232,6 +250,7 @@ button:focus-visible {
     padding: 4px 16px;
     gap: 16px;
     border-radius: 8px;
+
     /* border: 2px inset var(--text-color); */
     box-shadow: -40px 67px 22px 0px rgba(0, 0, 0, 0),
         -26px 43px 20px 0px rgba(0, 0, 0, 0.01),
@@ -240,6 +259,9 @@ button:focus-visible {
         -2px 3px 7px 0px rgba(0, 0, 0, 0.1);
     img {
         height: 36px;
+    }
+    .forecast-weather-wrapper {
+        display: contents;
     }
 }
 
@@ -479,7 +501,15 @@ button {
         gap: 4px;
         flex-direction: row;
         box-shadow: none;
-        width: min(75%, 100%);
+        width: min(85%, 100%);
         justify-content: space-between;
+        .forecast-weather-wrapper {
+            display: flex;
+            flex-basis: 140px;
+            align-items: center;
+        }
+        img {
+            margin-right: auto;
+        }
     }
 }
