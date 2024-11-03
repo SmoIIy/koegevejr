@@ -47,7 +47,7 @@ function Weathers() {
         );
     }
 
-    console.log(data.forecast.forecastday);
+    console.log(data);
 
     return (
         <main className="container fall">

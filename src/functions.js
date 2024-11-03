@@ -80,6 +80,10 @@ const fetchDataCurrent = async () => {
         data.current.condition.text,
         "da"
     );
+    data.current.condition.useicon = data.current.condition.icon.replace(
+        "//cdn.weatherapi.com/weather/64x64",
+        ""
+    );
     console.log(data.current.condition.text);
     return data;
 };
