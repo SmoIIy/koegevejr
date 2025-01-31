@@ -51,7 +51,7 @@ function Weathers() {
 
     return (
         <main className="container fall">
-            <Menu className="menu" />
+            {/* <Menu className="menu" /> */}
 
             <div className="left">
                 <div className="left-wrapper top">
@@ -70,7 +70,7 @@ function Weathers() {
                     </div>
                     <img
                         className="backlight"
-                        src="/icons/day/176.svg"
+                        src={data.current.condition.icon}
                         alt=""
                     />
                 </div>
@@ -96,7 +96,7 @@ function Weathers() {
                 </div>
             </div>
             <div className="right">
-                <img src="/rain.webp" alt="regn" />
+                <img src="/visitkøge.webp" alt="regn" />
             </div>
         </main>
     );
